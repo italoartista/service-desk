@@ -138,3 +138,193 @@
   - O sistema deve ter uma taxa de disponibilidade superior a 99,9%.
   - Implementação de redundância e failover em servidores para minimizar o impacto de falhas.
   - Monitoramento contínuo do sistema para detectar problemas antes que impactem os usuários.
+ 
+
+---
+
+# Documento de Requisitos (Sistema de Service Desk) - **Formato Ágil (Scrum)**
+
+## 1. **User Stories - Requisitos Funcionais**
+
+### 1.1 **Criação de Chamados (Tickets)**
+
+- **História de Usuário:**  
+  Como **usuário final**, eu quero **poder criar chamados de suporte** para que **eu possa relatar problemas ou solicitações de maneira fácil e organizada**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve permitir a criação de chamados via formulário.
+  - O formulário deve incluir campos como: título do chamado, descrição, categoria, prioridade e anexos.
+  - O usuário pode criar chamados por e-mail ou diretamente pelo portal do sistema.
+
+---
+
+### 1.2 **Atribuição Automática de Chamados**
+
+- **História de Usuário:**  
+  Como **gestor de suporte**, eu quero **que os chamados sejam automaticamente atribuídos a equipes ou técnicos responsáveis** para que **os chamados sejam tratados rapidamente sem intervenção manual**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve atribuir os chamados automaticamente com base em regras de roteamento (tipo de incidente, prioridade, etc.).
+  - Deve ser possível configurar grupos de suporte com especialidades.
+  - O sistema deve permitir a reassigenação manual caso necessário.
+
+---
+
+### 1.3 **Gestão de Prioridades**
+
+- **História de Usuário:**  
+  Como **técnico de suporte**, eu quero **poder atribuir prioridades aos chamados** para que **os chamados mais críticos sejam tratados primeiro**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve permitir definir as prioridades como: Baixa, Média, Alta e Crítica.
+  - O técnico pode alterar a prioridade de um chamado.
+  - O sistema deve permitir visualizar os chamados por prioridade.
+
+---
+
+### 1.4 **Base de Conhecimento (KB)**
+
+- **História de Usuário:**  
+  Como **técnico de suporte**, eu quero **ter acesso à base de conhecimento** para que **eu possa consultar artigos e soluções de problemas comuns**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve permitir o acesso à base de conhecimento por técnicos e usuários finais.
+  - Os artigos devem ser pesquisáveis e categorizados.
+  - O sistema deve sugerir artigos da base de conhecimento durante a criação ou atualização de chamados.
+
+---
+
+### 1.5 **Monitoramento e SLA (Acordo de Nível de Serviço)**
+
+- **História de Usuário:**  
+  Como **gestor de TI**, eu quero **monitorar o cumprimento dos SLAs** para que **eu possa garantir que os chamados estão sendo tratados dentro do prazo acordado**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve permitir definir SLAs para diferentes tipos de incidentes.
+  - O sistema deve gerar alertas quando um SLA estiver prestes a ser violado.
+  - Relatórios sobre cumprimento de SLAs devem estar disponíveis para análise.
+
+---
+
+### 1.6 **Comunicação com o Usuário (Notificações)**
+
+- **História de Usuário:**  
+  Como **usuário final**, eu quero **ser notificado sobre o andamento do meu chamado** para que **eu possa saber o status e o progresso da minha solicitação**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve enviar notificações por e-mail ou SMS quando o status do chamado for alterado.
+  - O usuário pode responder às notificações para atualizar o chamado.
+  - O técnico pode deixar comentários internos ou externos.
+
+---
+
+### 1.7 **Relatórios e Análises**
+
+- **História de Usuário:**  
+  Como **gestor de TI**, eu quero **acessar relatórios detalhados sobre os chamados e o desempenho da equipe de suporte** para que **eu possa tomar decisões baseadas em dados**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve gerar relatórios customizáveis com filtros por data, categoria, prioridade, etc.
+  - O sistema deve fornecer dashboards em tempo real com KPIs de desempenho.
+  - O gestor pode exportar os relatórios para análise externa.
+
+---
+
+### 1.8 **Escalonamento de Chamados**
+
+- **História de Usuário:**  
+  Como **técnico de suporte**, eu quero **escalar um chamado para outro nível de suporte** quando **não conseguir resolver o problema dentro do prazo estabelecido ou quando o problema for complexo**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve permitir o escalonamento de chamados para níveis superiores (ex: Nível 2, Nível 3).
+  - O sistema deve registrar todo o histórico de interações ao escalar um chamado.
+  - Notificações automáticas devem ser enviadas para os gestores e equipes responsáveis.
+
+---
+
+### 1.9 **Gestão de Recursos de TI**
+
+- **História de Usuário:**  
+  Como **gestor de TI**, eu quero **associar chamados a recursos de TI específicos** para que **eu possa rastrear problemas relacionados a equipamentos ou softwares da empresa**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve permitir associar chamados a recursos específicos (computadores, servidores, softwares, etc.).
+  - Deve ser possível consultar o histórico de manutenção e incidentes de cada recurso.
+  - Relatórios sobre falhas recorrentes devem ser gerados.
+
+---
+
+### 1.10 **Acesso e Permissões de Usuários**
+
+- **História de Usuário:**  
+  Como **administrador do sistema**, eu quero **configurar permissões de acesso baseadas em funções** para que **cada usuário tenha acesso apenas às funcionalidades necessárias para seu trabalho**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve permitir criar e gerenciar funções de usuários (Admin, Técnico, Usuário Final, etc.).
+  - Permissões devem ser configuráveis para cada função, permitindo acessar, editar ou visualizar funcionalidades específicas.
+  - O sistema deve manter um log de auditoria para todas as ações realizadas pelos usuários.
+
+---
+
+## 2. **User Stories - Requisitos Não Funcionais**
+
+### 2.1 **Escalabilidade**
+
+- **História de Usuário:**  
+  Como **administrador de infraestrutura**, eu quero **que o sistema seja escalável** para que **ele possa crescer junto com a empresa, suportando um aumento no número de usuários e chamados sem perda de desempenho**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve permitir adicionar novos servidores sem afetar a operação.
+  - O desempenho do sistema deve se manter estável durante picos de uso (ex: mais de 1.000 usuários simultâneos).
+  - O sistema deve ser capaz de lidar com um grande volume de dados e transações.
+
+---
+
+### 2.2 **Segurança**
+
+- **História de Usuário:**  
+  Como **usuário final**, eu quero **que meus dados sejam protegidos contra acessos não autorizados** para que **minhas informações pessoais e de segurança estejam sempre seguras**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve utilizar criptografia para proteger dados sensíveis.
+  - A autenticação multi-fator deve ser implementada para o acesso ao sistema.
+  - O sistema deve ter backups regulares e planos de recuperação de dados em caso de falhas.
+
+---
+
+### 2.3 **Usabilidade**
+
+- **História de Usuário:**  
+  Como **usuário final**, eu quero **ter uma interface intuitiva e fácil de usar** para que **eu possa navegar pelo sistema sem dificuldades**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve ser fácil de navegar, com uma interface limpa e organizada.
+  - A curva de aprendizado para usuários novos deve ser mínima.
+  - O sistema deve ter uma seção de ajuda e FAQs acessíveis a partir de qualquer página.
+
+---
+
+### 2.4 **Desempenho**
+
+- **História de Usuário:**  
+  Como **usuário final**, eu quero **que o sistema tenha um tempo de resposta rápido** para que **eu possa interagir com ele sem frustração ou atrasos**.
+
+- **Critérios de Aceitação:**
+  - O tempo de resposta de cada ação no sistema deve ser inferior a 2 segundos.
+  - O sistema deve carregar as páginas rapidamente, mesmo com muitos dados.
+  - O desempenho deve ser mantido com um número alto de usuários simultâneos.
+
+---
+
+### 2.5 **Disponibilidade**
+
+- **História de Usuário:**  
+  Como **usuário final**, eu quero **que o sistema esteja disponível 24/7** para que **eu possa acessar e registrar chamados a qualquer momento**.
+
+- **Critérios de Aceitação:**
+  - O sistema deve ter uma disponibilidade de 99,9% ou superior.
+  - Deve haver redundância e failover para garantir a continuidade do serviço.
+  - O sistema deve ser monitorado constantemente para identificar falhas antes que afetem os usuários.
+
+---
+
